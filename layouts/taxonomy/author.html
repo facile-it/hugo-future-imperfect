@@ -1,17 +1,17 @@
+{{ partial "general-title" . }}
+
 {{ partial "header" . }}
-    {{ $.Scratch.Set "shareNav" true }}
     {{ partial "navbar" . }}
     <!-- Main -->
     <div id="main">
+        {{ $author := index $.Site.Data.authors (.Title | lower) }}
+        <h1>Articles written by {{ $author.name }}</h1>
         {{ $paginator := .Paginate (where .Data.Pages "Type" "post") }}
         {{ range $paginator.Pages }}
             {{ .Render "content-list" }}
-
-            {{ partial "share-menu" . }}
         {{ end }}
-		
+
         {{ partial "pagination" . }}
-		
     </div>
     {{ partial "sidebar" . }}
 {{ partial "footer" . }}
