@@ -49,12 +49,22 @@
         {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
           <article class="mini-post">
             <header>
+              <div class="author-avatars">
+                {{ range $key, $value := .Params.authors }}
+                  {{ with index $.Site.Data.authors $value }}
+                    <a href="/authors/{{ $value }}/" class="author" title="See other posts from {{ .name }}">
+                      <img src="{{ .thumbnail }}" alt="{{ .name }} avatar" class="author-avatar"/>
+                    </a>
+                  {{ end }}
+                {{ end }}
+              </div>
+
               <h3>
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
               </h3>
               {{ $.Scratch.Set "dateType" .Date }}
               <time class="published" datetime='{{ ($.Scratch.Get "dateType").Format "2006-01-02" }}'>
-                {{ ($.Scratch.Get "dateType").Format "January 2, 2006" }}
+                {{ ($.Scratch.Get "dateType").Format "2 January 2006" }}
               </time>
             </header>
             {{ .Render "featured" }}
@@ -82,8 +92,7 @@
     <section id="categories">
       <header>
         <h3>
-          <a href="/categories/">Categories</a>
-        </h3>
+          <a href="/categories/">Top categories</a></h3>
       </header>
         {{ if .Site.Params.categoriesByCount }}
           {{ $.Scratch.Set "categories" .Site.Taxonomies.categories.ByCount }}
@@ -92,6 +101,7 @@
         {{ end }}
 
         {{ range $key, $value := $.Scratch.Get "categories" }}
+            {{ if ge $value.Count 5 }}
         <p>
           <article>
             <header>
@@ -106,6 +116,10 @@
           </article>
         </p>
         {{ end }}
+    {{ end }}
+        <p>
+            <a href="/categories/" class="button">View more categories</a>
+        </p>
     </section>
   {{ end }}
   {{ end }}
@@ -115,7 +129,7 @@
     <section id="mini-bio">
       <h3>About</h1>
       <p>{{ . | safeHTML }}</p>
-      <a href="/about/" class="button">Learn More</a>
+      <a href="/ita/chi-siamo/" class="button">Learn More</a>
     </section>
   {{ end }}
 
@@ -142,6 +156,10 @@
           {{ .Site.Title }}
         {{ end }}
       {{end}}.
+      <a href="/ita/disclaimer/" rel="nofollow">Disclaimer</a><br>
+      Design <a href="http://html5up.net" rel="nofollow" target="_blank">HTML5 UP</a><br>
+      Ported by <a href="//github.com/jpescador" rel="nofollow" target="_blank">Julio Pescador</a><br>
+      Modified by <a href="//github.com/Jean85" rel="nofollow" target="_blank">Alessandro Lai</a><br>
       Powered by <a href="//gohugo.io" target="_blank">Hugo</a>
     </p>
   </section>
