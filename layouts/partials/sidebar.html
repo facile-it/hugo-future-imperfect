@@ -47,11 +47,15 @@
         {{ range first ($.Scratch.Get "postLimit") (where ($.Scratch.Get "recentPosts") "Type" "post") }}
           <article class="mini-post">
             <header>
-                {{ range .Params.authors }}
-                    {{ with index $.Site.Data.authors . }}
-                        <img src="{{ .thumbnail }}" alt="{{ .name }} avatar" style="float:right; border-radius: 100%; display: block; width: 2.5em; margin-left:1em;"/>
-                    {{ end }}
+              <div class="author-avatars">
+                {{ range $key, $value := .Params.authors }}
+                  {{ with index $.Site.Data.authors $value }}
+                    <a href="/authors/{{ $value }}/" class="author" title="See other posts from {{ .name }}">
+                      <img src="{{ .thumbnail }}" alt="{{ .name }} avatar" class="author-avatar"/>
+                    </a>
+                  {{ end }}
                 {{ end }}
+              </div>
 
               <h3>
                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
