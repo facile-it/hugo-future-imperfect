@@ -10,6 +10,11 @@
   {{ end }}
 
   {{ .Render "featured" }}
+
+  {{ if .Params.toc }}
+    {{ .TableOfContents }}
+  {{ end }}
+
   <div id="content">
     {{ .Content }}
   </div>
