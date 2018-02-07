@@ -1,14 +1,6 @@
 <article class="post">
   {{ .Render "header" }}
 
-  {{ if .Site.Params.socialShare }}
-    <section id="social-share">
-      <ul class="icons">
-        {{ partial "share-links" . }}
-      </ul>
-    </section>
-  {{ end }}
-
   {{ .Render "featured" }}
 
   {{ if .Params.toc }}
@@ -18,6 +10,14 @@
   <div id="content">
     {{ .Content }}
   </div>
+
+  {{ if .Site.Params.socialShare }}
+  <section id="social-share">
+    <ul class="icons">
+      {{ partial "share-links" . }}
+    </ul>
+  </section>
+  {{ end }}
 
   <footer>
     {{ .Render "footer-category" }}
