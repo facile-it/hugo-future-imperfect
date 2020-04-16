@@ -104,7 +104,7 @@
           <article>
             <header>
               {{ if ne $value.Name "" }}
-                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name }}</a>
+                <a href="/categories/{{ $value.Name | urlize }}/">{{ $value.Name | humanize }}</a>
                 <span style="float:right;">{{ $value.Count }}</span>
               {{ else }}
                 Uncategorized
