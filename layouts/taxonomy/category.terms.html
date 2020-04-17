@@ -20,11 +20,11 @@
                     <article>
                         <header>
                             {{ if ne $value.Name "" }}
-                                <a href="{{"/" | relURL}}{{ $data.Plural }}/{{ $value.Name | urlize }}/">{{ $value.Name | humanize }}</a>
-                                <span style="float:right;">{{ $value.Count }}</span>
+                                <a href="{{ .Page.Permalink }}">{{ .Page.Title }}</a>
+                                <span style="float:right;">{{ .Count }}</span>
                             {{ else }}
                                 Uncategorized
-                                <span style="float:right;">{{ $value.Count }}</span>
+                                <span style="float:right;">{{ .Count }}</span>
                             {{ end }}
                         </header>
                     </article>
