@@ -74,7 +74,7 @@ pluralizeListTitles = false
 [params.intro]
   header    = "Hugo Future Imperfect"
 
-  paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa fa-hand-peace-o'></i>"
+  paragraph = "Another fine responsive site template by <a href=\"http://html5up.net\">HTML5 UP</a>. Ported by Julio Pescador with some extra goodies <i class='fa-solid fa-hand-peace-o'></i>"
 
   about     = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent tellus lacus, auctor vehicula molestie quis, tempor quis velit. Quisque in quam ac leo efficitur vulputate. Phasellus ullamcorper aliquam sodales. Maecenas sit amet condimentum ipsum. Proin sit amet ligula elit. Mauris."
 
@@ -98,37 +98,37 @@ pluralizeListTitles = false
 [[menu.main]]
   name = "Home"
   url = "/"
-  identifier = "fa fa-home"
+  identifier = "fa-solid fa-home"
   weight = 1
 
 [[menu.main]]
   name = "About"
   url = "/about/"
-  identifier = "fa fa-id-card-o"
+  identifier = "fa-solid fa-id-card-o"
   weight = 2
 
 [[menu.main]]
   name = "Blog"
   url = "/blog/"
-  identifier = "fa fa-newspaper-o"
+  identifier = "fa-solid fa-newspaper-o"
   weight = 3
 
 [[menu.main]]
   name = "Itemized"
   url = "/itemized/"
-  identifier = "fa fa-list"
+  identifier = "fa-solid fa-list"
   weight = 4
 
 [[menu.main]]
   name = "Categories"
   url = "/categories/"
-  identifier = "fa fa-sitemap"
+  identifier = "fa-solid fa-sitemap"
   weight = 5
 
 [[menu.main]]
   name = "Contact"
   url = "/contact/"
-  identifier = "fa fa-envelope-o"
+  identifier = "fa-solid fa-envelope-o"
   weight = 6
 
 # Sets Social Media icons to appear and link to your account. Value should be your
