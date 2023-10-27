@@ -23,7 +23,7 @@
       <ul class="icons">
         {{ if .Site.Params.rssAppearAtTop }}
           <li>
-            <a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         {{ end }}
         {{ partial "social" . }}
@@ -139,7 +139,7 @@
       <ul class="icons">
         {{ if .Site.Params.rssAppearAtBottom }}
           <li>
-            <a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml" target="_blank" title="RSS" class="fa fa-rss"></a>
+            <a href="{{ with .OutputFormats.Get "RSS" }}{{ .RelPermalink }}{{ end }}" type="application/rss+xml" target="_blank" title="RSS" class="fa-solid fa-rss"></a>
           </li>
         {{ end }}
         {{ partial "social" . }}
