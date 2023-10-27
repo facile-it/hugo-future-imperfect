@@ -1,14 +1,10 @@
 <meta name="twitter:card" content="summary_large_image"/>
-{{ with .Params.twitterlargeimage }}
-    <!-- Twitter summary card with large image must be at least 280x150px -->
+{{ with .Params.twitterImage }}
     <meta name="twitter:image" content="{{ . | absURL }}"/>
 {{ else }}
-    {{ with .Params.twitterImage }}
-        <meta name="twitter:image" content="{{ . | absURL }}"/>
-    {{ else }}
-        <meta name="twitter:image" content="{{ .Site.Params.twitterCardImage | absURL }}"/>
-    {{ end }}
+    <meta name="twitter:image" content="{{ .Site.Params.twitterCardImage | absURL }}"/>
 {{ end }}
+
 <!-- Twitter Card data -->
 <meta name="twitter:title" content="{{ .Title }}"/>
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"/>
