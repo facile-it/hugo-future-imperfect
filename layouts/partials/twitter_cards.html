@@ -17,6 +17,8 @@
 <!-- Twitter Card data -->
 <meta name="twitter:title" content="{{ .Title }}"/>
 <meta name="twitter:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"/>
+<meta name="og:title" content="{{ .Title }}" />
+<meta name="og:description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}"/>
 {{ range .Params.authors }}
     {{ with index $.Site.Data.authors . }}
         {{ with .twitter }}<meta name="twitter:creator" content="@{{ . }}"/>{{ end }}
