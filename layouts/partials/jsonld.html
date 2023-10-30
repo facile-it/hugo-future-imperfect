@@ -1,0 +1,39 @@
+{{ $author :=  or (.Params.author) (.Site.Author.name) }}
+{{ $authorSite := (.Params.authorUrl) }}
+{{ $postDate := .Now.format("yyyy-mm-dd") }}
+
+<script type="application/ld+json">
+    { 
+        "@context": "https://schema.org",
+        "genre":["SEO","JSON-LD"],
+        "@type": "BlogPosting",
+        "headline": {{ .Title }},
+        "keywords": ["Graceful shutdown", "Nest JS", "RabbitMQ"],
+        "wordcount": "1116",
+        "publisher": {
+            "@type": "Organization",
+            "name": "Facile.it Engineering",
+            "url": "https://engineering.facile.it/",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://engineering.facile.it/images/logo_engineering.png",
+                "width":"1057",
+                "height":"244"
+            }
+        },
+        "url": "https://engineering.facile.it/blog/eng/nest-js-graceful-shutdown/",
+        "image": "https://engineering.facile.it/images/nest-js-graceful-shutdown/nestjs-rabbitmq.png",
+        "datePublished": {{ $postDate }},
+        "dateCreated": {{ $postDate }},
+        "dateModified": {{ $postDate }},
+        "inLanguage": "en-US",
+        "locale": "en-US"
+        "isFamilyFriendly": "true",
+        "description": {{ .Description }}
+        "author": {
+            "@type": "Person",
+            "name": {{ $author }},
+            "url": {{ $authorUrl }}
+        }
+    }
+    </script>
