@@ -45,10 +45,9 @@
         {{ else }}
             {{ with .Site.Params.openGraphImage }}
                 <meta property="og:image" content="{{ . | absURL }}">
-                {{ else }}
-                    {{ with .Site.Params.twitterImage }}
-                        <meta name="description" content="{{ . }}">
-                    {{ end }}
+            {{ else }}
+                {{ with .Site.Params.twitterImage }}
+                    <meta name="description" content="{{ . }}">
                 {{ end }}
             {{ end }}
         {{ end }}
