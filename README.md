@@ -229,7 +229,7 @@ Credit: [jpescador]
 Hugo Future Imperfect was ported by [Julio Pescador](https://jpescador.com). Extra
 features implemented by the [project contributors](https://github.com/jpescador/hugo-future-imperfect/graphs/contributors).
 
-Send Julio Pescador a tweet [@julio_pescador](https://twitter.com/julio_pescador),
+Send Julio Pescador a tweet [@julio_pescador](https://x.com/julio_pescador),
 if you like the theme and are using it for your own personal use.
 
 ## License
