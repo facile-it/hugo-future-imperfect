@@ -67,7 +67,7 @@
 {{ end }}
 
 {{ with .Site.Social.facebook }}
-  <li><a href="//facebook.com/{{.}}" target="_blank" title="Facebook" class="fa fa-facebook"></a></li>
+  <li><a href="//facebook.com/{{.}}" target="_blank" title="Facebook" class="fa-brands fa-facebook-square"></a></li>
 {{ end }}
 
 {{ with .Site.Social.googleplus }}
@@ -113,7 +113,7 @@
 {{ end }}
 
 {{ with .Site.Social.twitter }}
-  <li><a href="//x.com/{{.}}" target="_blank" title="Twitter" class="fa fa-square-x-twitter"></a></li>
+  <li><a href="//x.com/{{.}}" target="_blank" title="Twitter" class="fa-brand fa-square-x-twitter"></a></li>
 {{ end }}
 
 {{ with .Site.Social.skype }}
@@ -147,6 +147,11 @@
 {{ with .Site.Social.researchgate }}
 <li><a href="//researchgate.net/profile/{{.}}" target="_blank" title="Research Gate"><i class="ai ai-researchgate"></i></a></li>
 {{ end }}
+
+{{ with .Site.Social.threads }}
+<li><a href="//threads.net/{{.}}" target="_blank" title="Threads"><i class="fa-brands fa-threads"></i></a></li>
+{{ end }}
+
 
 {{ with .Site.Social.email }}
   <li><a href="mailto:{{.}}" title="Email" class="fa fa-envelope"></a></li>

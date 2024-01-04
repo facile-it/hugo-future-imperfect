@@ -4,19 +4,9 @@
 {{ if .Site.Params.socialShareTwitter | default true}}
 <li>
   <a href="//x.com/share?url={{ .Permalink }}&amp;text={{ .Title }}&amp;via={{ .Site.Social.twitter }}" target="_blank" class="share-btn twitter">
-    <i class="fa fa-square-x-twitter"></i>
+    <i class="fa-brands fa-square-x-twitter"></i>
     <p>Twitter</p>
     </a>
-</li>
-{{ end }}
-
-<!-- Google Plus -->
-{{ if .Site.Params.socialShareGoogleplus | default true}}
-<li>
-  <a href="//plus.google.com/share?url={{ .Permalink }}" target="_blank" class="share-btn google-plus">
-    <i class="fa fa-google-plus"></i>
-    <p>Google+</p>
-  </a>
 </li>
 {{ end }}
 
@@ -25,7 +15,7 @@
 
 <li>
   <a href="//www.facebook.com/sharer/sharer.php?u={{ .Permalink }}" target="_blank" class="share-btn facebook">
-    <i class="fa fa-facebook"></i>
+    <i class="fa-brands fa-facebook"></i>
     <p>Facebook</p>
     </a>
 </li>
