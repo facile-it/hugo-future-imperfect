@@ -37,17 +37,13 @@
         {{ partial "twitter_cards" . }}
         {{ template "_internal/opengraph.html" . }}
 
-        {{ if .IsPage }}
-            {{ with .Params.twitterImage }}
-                <meta property="og:image" content="{{ . | absURL }}">
-            {{ else }}
-                {{ with .Site.Params.openGraphImage }}
-                <meta property="og:image" content="{{ . | absURL }}">
-                {{ end }}
-            {{ end }}
+        {{ with .Params.twitterImage }}
+            <meta property="og:image" content="{{ . | absURL }}">
+            <meta property="twitter:image" content="{{ . | absURL }}">
         {{ else }}
             {{ with .Site.Params.openGraphImage }}
-                <meta property="og:image" content="{{ . | absURL }}">
+            <meta property="og:image" content="{{ . | absURL }}">
+            <meta property="twitter:image" content="{{ . | absURL }}">
             {{ end }}
         {{ end }}
 
