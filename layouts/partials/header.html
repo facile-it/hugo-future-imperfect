@@ -28,8 +28,12 @@
         {{ with .Description }}
             <meta name="description" content="{{ . }}">
         {{ else }}
-            {{ with .Site.Params.description }}
+            {{ with .Summary }}
                 <meta name="description" content="{{ . }}">
+            {{ else }}
+                {{ with .Site.Params.description }}
+                    <meta name="description" content="{{ . }}">
+                {{ end }}
             {{ end }}
         {{ end }}
 
@@ -38,11 +42,14 @@
 
         {{ with .Params.twitterImage }}
             <meta property="og:image" content="{{ . | absURL }}">
-            <meta property="twitter:image" content="{{ . | absURL }}">
         {{ else }}
             {{ with .Site.Params.openGraphImage }}
-            <meta property="og:image" content="{{ . | absURL }}">
-            <meta property="twitter:image" content="{{ . | absURL }}">
+                <meta property="og:image" content="{{ . | absURL }}">
+                {{ else }}
+                    {{ with .Site.Params.twitterImage }}
+                        <meta name="description" content="{{ . }}">
+                    {{ end }}
+                {{ end }}
             {{ end }}
         {{ end }}
 
