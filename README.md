@@ -1,3 +1,5 @@
+**NB:** this fork is archived because it has been merged into the blog repository with https://github.com/facile-it/facile-it.github.io/pull/87
+
 # Hugo Future Imperfect
 
 Future Imperfect is a responsive theme tailored for blogging. The name is of no
